@@ -1,0 +1,7 @@
+E:\future\CSVEditor\CSVEditor\bin\Debug\CSVEditor.exe
+E:\future\CSVEditor\CSVEditor\bin\Debug\CSVEditor.pdb
+E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.CSVEditorForm.resources
+E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.Properties.Resources.resources
+E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.csproj.GenerateResource.Cache
+E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.exe
+E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.pdb
