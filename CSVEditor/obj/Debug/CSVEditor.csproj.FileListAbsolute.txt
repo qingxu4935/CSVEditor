@@ -5,3 +5,5 @@ E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.Properties.Resources.resources
 E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.csproj.GenerateResource.Cache
 E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.exe
 E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.pdb
+E:\Github\CSVEditor\CSVEditor\obj\Debug\CSVEditor.exe
+E:\Github\CSVEditor\CSVEditor\obj\Debug\CSVEditor.pdb

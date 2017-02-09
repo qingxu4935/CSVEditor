@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using CSVEditor.Properties;
 
 namespace CSVEditor
 {
@@ -21,7 +23,7 @@ namespace CSVEditor
 		{
 			var fileDialog = new OpenFileDialog
 			{
-				Title = "请选择文件",
+				Title = Resources.SelectACSVFile,
 				Filter = "CSV Files (*.csv)|*.csv"
 			};
 			if (fileDialog.ShowDialog() == DialogResult.OK)
@@ -96,7 +98,7 @@ namespace CSVEditor
 		{
 			if (string.IsNullOrEmpty(_csvPath))
 			{
-				MessageBox.Show("请选择CSV");
+				MessageBox.Show(Resources.SelectACSVFile);
 				return;
 			}
 			var count = 1;
@@ -108,6 +110,7 @@ namespace CSVEditor
 			while (File.Exists(newFullPath))
 			{
 				var tempFileName = $"{fileNameOnly}({count++})";
+				Debug.Assert(path != null, "path != null");
 				newFullPath = Path.Combine(path, tempFileName + extension);
 			}
 			var newLines = new List<string>();
@@ -115,7 +118,7 @@ namespace CSVEditor
 			newLines.AddRange(grid.Rows.Cast<DataGridViewRow>().Select(x => string.Join("\t", x.Cells.Cast<DataGridViewCell>().Select(y => y.Value.ToString()))));
 
 			File.WriteAllLines(newFullPath, newLines, Encoding.Unicode);
-			MessageBox.Show("保存成功，请查看" + newFullPath + ", 谢谢！");
+			MessageBox.Show($"保存成功，请查看{newFullPath}, 谢谢！");
 		}
 
 		private void Execute(Func<string, string> getValue)
@@ -124,13 +127,13 @@ namespace CSVEditor
 
 			if (!selectedColumnNames.Any())
 			{
-				MessageBox.Show("请选择列");
+				MessageBox.Show(Resources.SelectCSVColumnNames);
 				return;
 			}
 			var ruleName = cb.Text;
 			if (string.IsNullOrEmpty(ruleName))
 			{
-				MessageBox.Show("请选择规则");
+				MessageBox.Show(Resources.SelectFilterRule);
 				return;
 			}
 
@@ -153,7 +156,7 @@ namespace CSVEditor
 					}
 				}
 			}
-			MessageBox.Show("操作成功！！！");
+			MessageBox.Show(Resources.OperationIsSucessful);
 		}
 
 		private bool MatchRule(string oldValue, string ruleName, string condition, int index)
