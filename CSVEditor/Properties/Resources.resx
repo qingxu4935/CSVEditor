@@ -129,4 +129,7 @@
   <data name="OperationIsSucessful" xml:space="preserve">
     <value>操作成功！！！</value>
   </data>
+    <data name="SelectAnExcelFile" xml:space="preserve">
+    <value>请选择Excel</value>
+  </data>
 </root>

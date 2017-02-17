@@ -5,5 +5,17 @@ E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.Properties.Resources.resources
 E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.csproj.GenerateResource.Cache
 E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.exe
 E:\future\CSVEditor\CSVEditor\obj\Debug\CSVEditor.pdb
+E:\Github\CSVEditor\CSVEditor\obj\Debug\CSVEditor.CSVEditorForm.resources
+E:\Github\CSVEditor\CSVEditor\obj\Debug\CSVEditor.Properties.Resources.resources
+E:\Github\CSVEditor\CSVEditor\obj\Debug\CSVEditor.csproj.GenerateResource.Cache
 E:\Github\CSVEditor\CSVEditor\obj\Debug\CSVEditor.exe
 E:\Github\CSVEditor\CSVEditor\obj\Debug\CSVEditor.pdb
+E:\Github\CSVEditor\CSVEditor\bin\Debug\CSVEditor.exe
+E:\Github\CSVEditor\CSVEditor\bin\Debug\CSVEditor.pdb
+E:\Github\CSVEditor\CSVEditor\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\Github\CSVEditor\CSVEditor\bin\Debug\NPOI.dll
+E:\Github\CSVEditor\CSVEditor\bin\Debug\NPOI.OOXML.dll
+E:\Github\CSVEditor\CSVEditor\bin\Debug\NPOI.OpenXml4Net.dll
+E:\Github\CSVEditor\CSVEditor\bin\Debug\NPOI.OpenXmlFormats.dll
+E:\Github\CSVEditor\CSVEditor\bin\Debug\NPOI.xml
+E:\Github\CSVEditor\CSVEditor\obj\Debug\CSVEditor.csprojResolveAssemblyReference.cache

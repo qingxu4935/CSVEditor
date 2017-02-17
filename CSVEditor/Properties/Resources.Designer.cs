@@ -79,6 +79,15 @@ namespace CSVEditor.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 请选择Excel.
+        /// </summary>
+        internal static string SelectAnExcelFile {
+            get {
+                return ResourceManager.GetString("SelectAnExcelFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 请选择列.
         /// </summary>
         internal static string SelectCSVColumnNames {

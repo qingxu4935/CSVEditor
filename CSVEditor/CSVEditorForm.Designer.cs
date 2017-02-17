@@ -28,8 +28,8 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.btnSelect = new System.Windows.Forms.Button();
-			this.grid = new System.Windows.Forms.DataGridView();
+			this.btnSelectCSV = new System.Windows.Forms.Button();
+			this.gridCSV = new System.Windows.Forms.DataGridView();
 			this.lblColumns = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.cb = new System.Windows.Forms.ComboBox();
@@ -56,40 +56,59 @@
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
-			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+			this.btnSelectExcel = new System.Windows.Forms.Button();
+			this.btnUpdateByExcel = new System.Windows.Forms.Button();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.gridExcel = new System.Windows.Forms.DataGridView();
+			this.label9 = new System.Windows.Forms.Label();
+			this.label10 = new System.Windows.Forms.Label();
+			this.gridOld = new System.Windows.Forms.DataGridView();
+			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			((System.ComponentModel.ISupportInitialize)(this.gridCSV)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
 			this.groupBox4.SuspendLayout();
+			this.tabControl1.SuspendLayout();
+			this.tabPage1.SuspendLayout();
+			this.tabPage2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.gridExcel)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridOld)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+			this.splitContainer1.Panel1.SuspendLayout();
+			this.splitContainer1.Panel2.SuspendLayout();
+			this.splitContainer1.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// btnSelect
+			// btnSelectCSV
 			// 
-			this.btnSelect.Location = new System.Drawing.Point(32, 59);
-			this.btnSelect.Name = "btnSelect";
-			this.btnSelect.Size = new System.Drawing.Size(127, 67);
-			this.btnSelect.TabIndex = 0;
-			this.btnSelect.Text = "选择CSV文件";
-			this.btnSelect.UseVisualStyleBackColor = true;
-			this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+			this.btnSelectCSV.Location = new System.Drawing.Point(601, 12);
+			this.btnSelectCSV.Name = "btnSelectCSV";
+			this.btnSelectCSV.Size = new System.Drawing.Size(189, 34);
+			this.btnSelectCSV.TabIndex = 0;
+			this.btnSelectCSV.Text = "选择CSV文件";
+			this.btnSelectCSV.UseVisualStyleBackColor = true;
+			this.btnSelectCSV.Click += new System.EventHandler(this.btnSelectCSV_Click);
 			// 
-			// grid
+			// gridCSV
 			// 
-			this.grid.AllowUserToAddRows = false;
-			this.grid.AllowUserToDeleteRows = false;
-			this.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.grid.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.grid.Location = new System.Drawing.Point(0, 483);
-			this.grid.Name = "grid";
-			this.grid.ReadOnly = true;
-			this.grid.RowTemplate.Height = 27;
-			this.grid.Size = new System.Drawing.Size(1187, 296);
-			this.grid.TabIndex = 1;
+			this.gridCSV.AllowUserToAddRows = false;
+			this.gridCSV.AllowUserToDeleteRows = false;
+			this.gridCSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridCSV.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.gridCSV.Location = new System.Drawing.Point(0, 0);
+			this.gridCSV.Name = "gridCSV";
+			this.gridCSV.ReadOnly = true;
+			this.gridCSV.RowTemplate.Height = 27;
+			this.gridCSV.Size = new System.Drawing.Size(701, 278);
+			this.gridCSV.TabIndex = 1;
 			// 
 			// lblColumns
 			// 
 			this.lblColumns.AutoSize = true;
-			this.lblColumns.Location = new System.Drawing.Point(197, 59);
+			this.lblColumns.Location = new System.Drawing.Point(28, 43);
 			this.lblColumns.Name = "lblColumns";
 			this.lblColumns.Size = new System.Drawing.Size(67, 15);
 			this.lblColumns.TabIndex = 3;
@@ -98,7 +117,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(470, 59);
+			this.label1.Location = new System.Drawing.Point(301, 43);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(112, 15);
 			this.label1.TabIndex = 4;
@@ -107,7 +126,7 @@
 			// cb
 			// 
 			this.cb.FormattingEnabled = true;
-			this.cb.Location = new System.Drawing.Point(595, 55);
+			this.cb.Location = new System.Drawing.Point(426, 39);
 			this.cb.Name = "cb";
 			this.cb.Size = new System.Drawing.Size(169, 23);
 			this.cb.TabIndex = 5;
@@ -115,7 +134,7 @@
 			// 
 			// txtCondition
 			// 
-			this.txtCondition.Location = new System.Drawing.Point(881, 53);
+			this.txtCondition.Location = new System.Drawing.Point(712, 37);
 			this.txtCondition.Name = "txtCondition";
 			this.txtCondition.Size = new System.Drawing.Size(169, 25);
 			this.txtCondition.TabIndex = 6;
@@ -140,11 +159,11 @@
 			// 
 			// btnSave
 			// 
-			this.btnSave.Location = new System.Drawing.Point(523, 434);
+			this.btnSave.Location = new System.Drawing.Point(601, 482);
 			this.btnSave.Name = "btnSave";
 			this.btnSave.Size = new System.Drawing.Size(189, 34);
 			this.btnSave.TabIndex = 9;
-			this.btnSave.Text = "保存为新CSV文件";
+			this.btnSave.Text = "保存新CSV文件";
 			this.btnSave.UseVisualStyleBackColor = true;
 			this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
 			// 
@@ -152,7 +171,7 @@
 			// 
 			this.listView.CheckBoxes = true;
 			this.listView.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-			this.listView.Location = new System.Drawing.Point(200, 85);
+			this.listView.Location = new System.Drawing.Point(31, 69);
 			this.listView.Name = "listView";
 			this.listView.Size = new System.Drawing.Size(233, 308);
 			this.listView.TabIndex = 12;
@@ -285,7 +304,7 @@
 			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.btnBulkUpdate);
 			this.groupBox1.Controls.Add(this.textBoxAfter);
-			this.groupBox1.Location = new System.Drawing.Point(473, 95);
+			this.groupBox1.Location = new System.Drawing.Point(304, 79);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(685, 64);
 			this.groupBox1.TabIndex = 30;
@@ -299,7 +318,7 @@
 			this.groupBox2.Controls.Add(this.txtOld);
 			this.groupBox2.Controls.Add(this.txtNew);
 			this.groupBox2.Controls.Add(this.label6);
-			this.groupBox2.Location = new System.Drawing.Point(473, 172);
+			this.groupBox2.Location = new System.Drawing.Point(304, 156);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(685, 64);
 			this.groupBox2.TabIndex = 31;
@@ -312,7 +331,7 @@
 			this.groupBox3.Controls.Add(this.btnHead);
 			this.groupBox3.Controls.Add(this.txtHead);
 			this.groupBox3.Controls.Add(this.label3);
-			this.groupBox3.Location = new System.Drawing.Point(473, 245);
+			this.groupBox3.Location = new System.Drawing.Point(304, 229);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(685, 64);
 			this.groupBox3.TabIndex = 32;
@@ -325,37 +344,156 @@
 			this.groupBox4.Controls.Add(this.btnTail);
 			this.groupBox4.Controls.Add(this.txtTail);
 			this.groupBox4.Controls.Add(this.label8);
-			this.groupBox4.Location = new System.Drawing.Point(473, 329);
+			this.groupBox4.Location = new System.Drawing.Point(304, 313);
 			this.groupBox4.Name = "groupBox4";
 			this.groupBox4.Size = new System.Drawing.Size(685, 64);
 			this.groupBox4.TabIndex = 33;
 			this.groupBox4.TabStop = false;
 			this.groupBox4.Text = "操作4";
 			// 
+			// btnSelectExcel
+			// 
+			this.btnSelectExcel.Location = new System.Drawing.Point(166, 13);
+			this.btnSelectExcel.Name = "btnSelectExcel";
+			this.btnSelectExcel.Size = new System.Drawing.Size(189, 34);
+			this.btnSelectExcel.TabIndex = 0;
+			this.btnSelectExcel.Text = "选择Excel文件";
+			this.btnSelectExcel.UseVisualStyleBackColor = true;
+			this.btnSelectExcel.Click += new System.EventHandler(this.btnSelectExcel_Click);
+			// 
+			// btnUpdateByExcel
+			// 
+			this.btnUpdateByExcel.Location = new System.Drawing.Point(1081, 13);
+			this.btnUpdateByExcel.Name = "btnUpdateByExcel";
+			this.btnUpdateByExcel.Size = new System.Drawing.Size(189, 34);
+			this.btnUpdateByExcel.TabIndex = 1;
+			this.btnUpdateByExcel.Text = "确定";
+			this.btnUpdateByExcel.UseVisualStyleBackColor = true;
+			this.btnUpdateByExcel.Click += new System.EventHandler(this.btnUpdateByExcel_Click);
+			// 
+			// tabControl1
+			// 
+			this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Location = new System.Drawing.Point(4, 52);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(1406, 424);
+			this.tabControl1.TabIndex = 36;
+			// 
+			// tabPage1
+			// 
+			this.tabPage1.Controls.Add(this.groupBox1);
+			this.tabPage1.Controls.Add(this.groupBox4);
+			this.tabPage1.Controls.Add(this.listView);
+			this.tabPage1.Controls.Add(this.lblColumns);
+			this.tabPage1.Controls.Add(this.txtCondition);
+			this.tabPage1.Controls.Add(this.groupBox3);
+			this.tabPage1.Controls.Add(this.cb);
+			this.tabPage1.Controls.Add(this.label1);
+			this.tabPage1.Controls.Add(this.groupBox2);
+			this.tabPage1.Location = new System.Drawing.Point(4, 25);
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage1.Size = new System.Drawing.Size(1398, 395);
+			this.tabPage1.TabIndex = 0;
+			this.tabPage1.Text = "手动";
+			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// tabPage2
+			// 
+			this.tabPage2.Controls.Add(this.gridExcel);
+			this.tabPage2.Controls.Add(this.btnUpdateByExcel);
+			this.tabPage2.Controls.Add(this.btnSelectExcel);
+			this.tabPage2.Location = new System.Drawing.Point(4, 25);
+			this.tabPage2.Name = "tabPage2";
+			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage2.Size = new System.Drawing.Size(1398, 395);
+			this.tabPage2.TabIndex = 1;
+			this.tabPage2.Text = "Excel";
+			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// gridExcel
+			// 
+			this.gridExcel.AllowUserToAddRows = false;
+			this.gridExcel.AllowUserToDeleteRows = false;
+			this.gridExcel.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridExcel.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.gridExcel.Location = new System.Drawing.Point(3, 53);
+			this.gridExcel.Name = "gridExcel";
+			this.gridExcel.ReadOnly = true;
+			this.gridExcel.RowTemplate.Height = 27;
+			this.gridExcel.Size = new System.Drawing.Size(1392, 339);
+			this.gridExcel.TabIndex = 2;
+			// 
+			// label9
+			// 
+			this.label9.AutoSize = true;
+			this.label9.Location = new System.Drawing.Point(12, 545);
+			this.label9.Name = "label9";
+			this.label9.Size = new System.Drawing.Size(54, 15);
+			this.label9.TabIndex = 37;
+			this.label9.Text = "新CSV:";
+			// 
+			// label10
+			// 
+			this.label10.AutoSize = true;
+			this.label10.Location = new System.Drawing.Point(717, 545);
+			this.label10.Name = "label10";
+			this.label10.Size = new System.Drawing.Size(54, 15);
+			this.label10.TabIndex = 38;
+			this.label10.Text = "旧CSV:";
+			// 
+			// gridOld
+			// 
+			this.gridOld.AllowUserToAddRows = false;
+			this.gridOld.AllowUserToDeleteRows = false;
+			this.gridOld.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridOld.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.gridOld.Location = new System.Drawing.Point(0, 0);
+			this.gridOld.Name = "gridOld";
+			this.gridOld.ReadOnly = true;
+			this.gridOld.RowTemplate.Height = 27;
+			this.gridOld.Size = new System.Drawing.Size(701, 278);
+			this.gridOld.TabIndex = 39;
+			// 
+			// splitContainer1
+			// 
+			this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Bottom;
+			this.splitContainer1.Location = new System.Drawing.Point(0, 563);
+			this.splitContainer1.Name = "splitContainer1";
+			// 
+			// splitContainer1.Panel1
+			// 
+			this.splitContainer1.Panel1.Controls.Add(this.gridCSV);
+			// 
+			// splitContainer1.Panel2
+			// 
+			this.splitContainer1.Panel2.Controls.Add(this.gridOld);
+			this.splitContainer1.Size = new System.Drawing.Size(1406, 278);
+			this.splitContainer1.SplitterDistance = 701;
+			this.splitContainer1.TabIndex = 40;
+			// 
 			// CSVEditorForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1187, 779);
-			this.Controls.Add(this.groupBox4);
-			this.Controls.Add(this.groupBox3);
-			this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.groupBox1);
-			this.Controls.Add(this.listView);
+			this.ClientSize = new System.Drawing.Size(1406, 841);
+			this.Controls.Add(this.splitContainer1);
+			this.Controls.Add(this.label10);
+			this.Controls.Add(this.label9);
 			this.Controls.Add(this.btnSave);
-			this.Controls.Add(this.txtCondition);
-			this.Controls.Add(this.cb);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.lblColumns);
-			this.Controls.Add(this.grid);
-			this.Controls.Add(this.btnSelect);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+			this.Controls.Add(this.tabControl1);
+			this.Controls.Add(this.btnSelectCSV);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "CSVEditorForm";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "CSV批量修改";
-			((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridCSV)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
@@ -364,14 +502,24 @@
 			this.groupBox3.PerformLayout();
 			this.groupBox4.ResumeLayout(false);
 			this.groupBox4.PerformLayout();
+			this.tabControl1.ResumeLayout(false);
+			this.tabPage1.ResumeLayout(false);
+			this.tabPage1.PerformLayout();
+			this.tabPage2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.gridExcel)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.gridOld)).EndInit();
+			this.splitContainer1.Panel1.ResumeLayout(false);
+			this.splitContainer1.Panel2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+			this.splitContainer1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-		private System.Windows.Forms.Button btnSelect;
-		private System.Windows.Forms.DataGridView grid;
+		private System.Windows.Forms.Button btnSelectCSV;
+		private System.Windows.Forms.DataGridView gridCSV;
 		private System.Windows.Forms.Label lblColumns;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.ComboBox cb;
@@ -398,6 +546,16 @@
 		private System.Windows.Forms.GroupBox groupBox2;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.GroupBox groupBox4;
+		private System.Windows.Forms.Button btnUpdateByExcel;
+		private System.Windows.Forms.Button btnSelectExcel;
+		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.TabPage tabPage1;
+		private System.Windows.Forms.TabPage tabPage2;
+		private System.Windows.Forms.DataGridView gridExcel;
+		private System.Windows.Forms.Label label9;
+		private System.Windows.Forms.Label label10;
+		private System.Windows.Forms.DataGridView gridOld;
+		private System.Windows.Forms.SplitContainer splitContainer1;
 	}
 }
 
