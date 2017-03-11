@@ -66,6 +66,10 @@
 			this.label10 = new System.Windows.Forms.Label();
 			this.gridOld = new System.Windows.Forms.DataGridView();
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.groupBox5 = new System.Windows.Forms.GroupBox();
+			this.label11 = new System.Windows.Forms.Label();
+			this.btnDeleteValidImg = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.gridCSV)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
@@ -80,6 +84,8 @@
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
+			this.tabPage3.SuspendLayout();
+			this.groupBox5.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// btnSelectCSV
@@ -102,7 +108,7 @@
 			this.gridCSV.Name = "gridCSV";
 			this.gridCSV.ReadOnly = true;
 			this.gridCSV.RowTemplate.Height = 27;
-			this.gridCSV.Size = new System.Drawing.Size(701, 278);
+			this.gridCSV.Size = new System.Drawing.Size(715, 278);
 			this.gridCSV.TabIndex = 1;
 			// 
 			// lblColumns
@@ -377,10 +383,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.tabPage1);
 			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Controls.Add(this.tabPage3);
 			this.tabControl1.Location = new System.Drawing.Point(4, 52);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1406, 424);
+			this.tabControl1.Size = new System.Drawing.Size(1436, 424);
 			this.tabControl1.TabIndex = 36;
 			// 
 			// tabPage1
@@ -397,7 +404,7 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 25);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(1398, 395);
+			this.tabPage1.Size = new System.Drawing.Size(1428, 395);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "手动";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -410,7 +417,7 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 25);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(1398, 395);
+			this.tabPage2.Size = new System.Drawing.Size(1428, 395);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Excel";
 			this.tabPage2.UseVisualStyleBackColor = true;
@@ -425,7 +432,7 @@
 			this.gridExcel.Name = "gridExcel";
 			this.gridExcel.ReadOnly = true;
 			this.gridExcel.RowTemplate.Height = 27;
-			this.gridExcel.Size = new System.Drawing.Size(1392, 339);
+			this.gridExcel.Size = new System.Drawing.Size(1422, 339);
 			this.gridExcel.TabIndex = 2;
 			// 
 			// label9
@@ -456,7 +463,7 @@
 			this.gridOld.Name = "gridOld";
 			this.gridOld.ReadOnly = true;
 			this.gridOld.RowTemplate.Height = 27;
-			this.gridOld.Size = new System.Drawing.Size(701, 278);
+			this.gridOld.Size = new System.Drawing.Size(717, 278);
 			this.gridOld.TabIndex = 39;
 			// 
 			// splitContainer1
@@ -472,15 +479,55 @@
 			// splitContainer1.Panel2
 			// 
 			this.splitContainer1.Panel2.Controls.Add(this.gridOld);
-			this.splitContainer1.Size = new System.Drawing.Size(1406, 278);
-			this.splitContainer1.SplitterDistance = 701;
+			this.splitContainer1.Size = new System.Drawing.Size(1436, 278);
+			this.splitContainer1.SplitterDistance = 715;
 			this.splitContainer1.TabIndex = 40;
+			// 
+			// tabPage3
+			// 
+			this.tabPage3.Controls.Add(this.groupBox5);
+			this.tabPage3.Location = new System.Drawing.Point(4, 25);
+			this.tabPage3.Name = "tabPage3";
+			this.tabPage3.Size = new System.Drawing.Size(1428, 395);
+			this.tabPage3.TabIndex = 2;
+			this.tabPage3.Text = "其他";
+			this.tabPage3.UseVisualStyleBackColor = true;
+			// 
+			// groupBox5
+			// 
+			this.groupBox5.Controls.Add(this.btnDeleteValidImg);
+			this.groupBox5.Controls.Add(this.label11);
+			this.groupBox5.Location = new System.Drawing.Point(7, 34);
+			this.groupBox5.Name = "groupBox5";
+			this.groupBox5.Size = new System.Drawing.Size(479, 75);
+			this.groupBox5.TabIndex = 0;
+			this.groupBox5.TabStop = false;
+			this.groupBox5.Text = "其他1";
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Location = new System.Drawing.Point(30, 37);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(286, 15);
+			this.label11.TabIndex = 0;
+			this.label11.Text = "将列【宝贝描述】中路径不存在的IMG删除";
+			// 
+			// btnDeleteValidImg
+			// 
+			this.btnDeleteValidImg.Location = new System.Drawing.Point(356, 28);
+			this.btnDeleteValidImg.Name = "btnDeleteValidImg";
+			this.btnDeleteValidImg.Size = new System.Drawing.Size(75, 34);
+			this.btnDeleteValidImg.TabIndex = 1;
+			this.btnDeleteValidImg.Text = "确定";
+			this.btnDeleteValidImg.UseVisualStyleBackColor = true;
+			this.btnDeleteValidImg.Click += new System.EventHandler(this.btnDeleteValidImg_Click);
 			// 
 			// CSVEditorForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1406, 841);
+			this.ClientSize = new System.Drawing.Size(1436, 841);
 			this.Controls.Add(this.splitContainer1);
 			this.Controls.Add(this.label10);
 			this.Controls.Add(this.label9);
@@ -512,6 +559,9 @@
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
+			this.tabPage3.ResumeLayout(false);
+			this.groupBox5.ResumeLayout(false);
+			this.groupBox5.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -556,6 +606,10 @@
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.DataGridView gridOld;
 		private System.Windows.Forms.SplitContainer splitContainer1;
+		private System.Windows.Forms.TabPage tabPage3;
+		private System.Windows.Forms.GroupBox groupBox5;
+		private System.Windows.Forms.Button btnDeleteValidImg;
+		private System.Windows.Forms.Label label11;
 	}
 }
 

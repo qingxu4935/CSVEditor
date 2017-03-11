@@ -2,10 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using HorizontalAlignment = System.Windows.Forms.HorizontalAlignment;
+using HtmlAgilityPack;
 
 namespace CSVEditor
 {
@@ -185,6 +188,54 @@ namespace CSVEditor
 			MessageBox.Show(Resources.OperationIsSucessful);
 		}
 
+		private void btnDeleteValidImg_Click(object sender, EventArgs e)
+		{
+			if (gridCSV.Rows.Count == 0)
+			{
+				MessageBox.Show(Resources.SelectACSVFile);
+				return;
+			}
+
+			foreach (DataGridViewRow excelRow in gridCSV.Rows)
+			{
+				var productDescription = GetColumnValueInCSVRow(excelRow, "20-宝贝描述");
+				if (!string.IsNullOrEmpty(productDescription))
+				{
+					SetColumnValueInCSVRow(excelRow, "20-宝贝描述", GetNewProductDescription(productDescription));
+				}
+				
+			}
+			MessageBox.Show(Resources.OperationIsSucessful);
+		}
+
+		string GetNewProductDescription(string productDescription)
+		{
+			var doc = new HtmlAgilityPack.HtmlDocument();
+			doc.LoadHtml(productDescription);
+			var imgNodesToDelete = new List<HtmlNode>();
+			foreach (var node in doc.DocumentNode.SelectNodes("//img[@src]"))
+			{
+				if (node.Name.ToLower() == "img")
+				{
+					var src = node.GetAttributeValue("src", "");
+					if (!string.IsNullOrEmpty(src) && src.Length >= 8)
+					{
+						var srcPath = src.Substring(8);
+						if (!File.Exists(srcPath))
+						{
+							imgNodesToDelete.Add(node);
+						}
+					}
+				}
+			}
+
+			foreach (var node in imgNodesToDelete)
+			{
+				node?.Remove();
+			}
+			return Regex.Replace(doc.DocumentNode.OuterHtml, @"\s{2,}", "");
+		}
+
 		private static string[] GetNewProductAttributeCombines(string oldProductAttributeCombinesStr, decimal productDelta)
 		{
 			var oldProductAttributeCombines = oldProductAttributeCombinesStr.Split(';');
@@ -333,8 +384,9 @@ namespace CSVEditor
 		{
 			var cell = row.Cells[collumnName];
 			var currentCellValue = cell.Value.ToString();
+
 			var isDoublequotesAround = currentCellValue.StartsWith("\"") && currentCellValue.EndsWith("\"");
-			cell.Value = isDoublequotesAround ? "\"" + columnValue + "\"" : columnValue;
+			cell.Value = isDoublequotesAround ? "\"" + columnValue.Replace("\"", "\"\"") + "\"" : columnValue;
 		}
 
 		private static string GetColumnValueInCSVRow(DataGridViewRow row, string collumnName)
@@ -344,7 +396,7 @@ namespace CSVEditor
 			var isDoublequotesAround = cellValue.StartsWith("\"") && cellValue.EndsWith("\"");
 			if (isDoublequotesAround)
 			{
-				cellValue = cellValue.Trim('\"');
+				cellValue = cellValue.Trim('\"').Replace("\"\"","\"");
 			}
 			return cellValue;
 		}

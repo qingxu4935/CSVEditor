@@ -19,3 +19,6 @@ E:\Github\CSVEditor\CSVEditor\bin\Debug\NPOI.OpenXml4Net.dll
 E:\Github\CSVEditor\CSVEditor\bin\Debug\NPOI.OpenXmlFormats.dll
 E:\Github\CSVEditor\CSVEditor\bin\Debug\NPOI.xml
 E:\Github\CSVEditor\CSVEditor\obj\Debug\CSVEditor.csprojResolveAssemblyReference.cache
+E:\Github\CSVEditor\CSVEditor\bin\Debug\HtmlAgilityPack.dll
+E:\Github\CSVEditor\CSVEditor\bin\Debug\HtmlAgilityPack.pdb
+E:\Github\CSVEditor\CSVEditor\bin\Debug\HtmlAgilityPack.xml
